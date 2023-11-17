@@ -42,9 +42,6 @@ func _unhandled_input(event):
 		_take_picture()
 		
 func _take_picture():
-	var screenshotPath = "res://SavedPics/"
-	var testDir = Directory.new()
-	numScreenshots += 1
-	if(not testDir.dir_exists(screenshotPath)):
-		testDir.make_dir(screenshotPath)
-	texture.get_data().save_png(screenshotPath + "Screenshot" + String(numScreenshots) + ".png")
+	ScreenshotHandler._setScreenshot(texture.get_data())
+# warning-ignore:return_value_discarded
+	ScreenshotHandler.saveScreenshot("res://SavedPics/")

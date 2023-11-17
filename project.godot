@@ -24,6 +24,10 @@ config/name="WaitingForProject"
 run/main_scene="res://BaseScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+ScreenshotHandler="*res://Scripts/ScreenshotHandler.gd"
+
 [display]
 
 window/size/fullscreen=true
