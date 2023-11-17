@@ -55,9 +55,6 @@ navmesh = SubResource( 8 )
 [node name="Base" parent="NavigationMeshInstance" instance=ExtResource( 2 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0.320555, 0, 0.318243 )
 
-[node name="Ceilling" parent="NavigationMeshInstance/Base" index="0"]
-material/0 = ExtResource( 1 )
-
 [node name="StaticBody" type="StaticBody" parent="NavigationMeshInstance/Base/Ceilling" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/Base/Ceilling/StaticBody"]
@@ -70,9 +67,6 @@ material/0 = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/Base/Wall/StaticBody"]
 shape = SubResource( 4 )
-
-[node name="Floor" parent="NavigationMeshInstance/Base" index="2"]
-material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="NavigationMeshInstance/Base/Floor" index="0"]
 
