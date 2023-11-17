@@ -11,7 +11,7 @@ func getScreenshot():
 	return currScreenshot
 #get image as a list of vector3s
 func getScreenImgRGBArray() -> PoolVector3Array:
-	var returnArr : PoolVector3Array
+	var returnArr := PoolVector3Array([])
 	for i in currScreenshot.get_size().x:
 		for j in currScreenshot.get_size().y:
 			var col := currScreenshot.get_pixel(i,j)
