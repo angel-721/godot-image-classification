@@ -45,6 +45,7 @@ material/0 = ExtResource( 1 )
 shape = SubResource( 3 )
 
 [node name="Wall" parent="Base" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00399184, 1.00316, -2.49979 )
 material/0 = ExtResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="Base/Wall" index="0"]
