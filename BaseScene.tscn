@@ -37,8 +37,6 @@ environment = SubResource( 2 )
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.707107, 0.64535, -0.289004, 0, 0.408713, 0.912663, 0.707107, -0.64535, 0.289004, 0, 0, 0 )
 
-<<<<<<< HEAD
-=======
 [node name="Base" parent="." instance=ExtResource( 2 )]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0.320555, 0, 0.318243 )
 
@@ -76,7 +74,6 @@ mesh = SubResource( 6 )
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
 shape = SubResource( 7 )
 
->>>>>>> 34297e40b510e57ae578798f220f41e9d660d587
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94852, 0, -14.5438 )
 
