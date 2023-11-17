@@ -15,4 +15,7 @@ data_*/
 mono_crash.*.json
 
 #don't push screenshots pls
-SavedPcis/
+SavedPics/
+
+#python ugh
+addons/pythonscript/
