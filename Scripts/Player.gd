@@ -7,16 +7,19 @@ export(float) var grav
 
 onready var cam = $Camera
 onready var viewport = $Viewport
+onready var audioAnim = $AudioHoldder/AnimationPlayer
 
 var actualVelocity := Vector3.ZERO
 
 var texture := ViewportTexture.new()
+var modelLastPrediction = ''
 var model = null
 var screenshot = null
 var predictLabel = null
 
 var numScreenshots : int = 0
 func _ready():
+	audioAnim.play("ToCat")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	texture = viewport.get_texture()
 	model = get_node("NetworkNode")
@@ -53,4 +56,9 @@ func _take_picture():
 	ScreenshotHandler.saveScreenshotOne("res://SavedPics/")
 	predictLabel.display_cat_text(model.predict_image_read())
 	
+	if(model.prediction != modelLastPrediction):
+		if(model.prediction == 'Cat'):
+			audioAnim.play("ToCat")
+		else:
+			audioAnim.play("ToDog")
 	

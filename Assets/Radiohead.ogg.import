@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Radiohead.ogg-877aa3859ca89854027637c0d9185ff9.oggstr"
+
+[deps]
+
+source_file="res://Assets/Radiohead.ogg"
+dest_files=[ "res://.import/Radiohead.ogg-877aa3859ca89854027637c0d9185ff9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
