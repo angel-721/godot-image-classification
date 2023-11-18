@@ -8,6 +8,7 @@ export(float) var grav
 onready var cam = $Camera
 onready var viewport = $Viewport
 onready var audioAnim = $AudioHoldder/AnimationPlayer
+onready var label = $Control/CatDogLabel
 
 var actualVelocity := Vector3.ZERO
 
@@ -15,7 +16,8 @@ var texture := ViewportTexture.new()
 var modelLastPrediction = ''
 var model = null
 var screenshot = null
-var predictLabel = null
+
+#var predictLabel = null
 
 var numScreenshots : int = 0
 func _ready():
@@ -23,7 +25,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	texture = viewport.get_texture()
 	model = get_node("NetworkNode")
-	predictLabel = get_node("../PredictLabel")
+#	predictLabel = get_node("../PredictLabel")
 	print(model)
 	
 
@@ -40,7 +42,7 @@ func _physics_process(_delta):
 	actualVelocity = move_and_slide(vel,Vector3.UP)
 	
 
-func _unhandled_input(event):
+func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouseSpeed)
 		cam.rotate_x(-event.relative.y * mouseSpeed)
@@ -54,9 +56,11 @@ func _unhandled_input(event):
 func _take_picture():
 	ScreenshotHandler._setScreenshot(texture.get_data())
 	ScreenshotHandler.saveScreenshotOne("res://SavedPics/")
-	predictLabel.display_cat_text(model.predict_image_read())
 	
-	if(model.prediction != modelLastPrediction):
+	model.predict_image_read()
+	label.text = "Predicted: " + ("None" if(model.prediction == null) else model.prediction)
+	
+	if(model.prediction!= modelLastPrediction):
 		if(model.prediction == 'Cat'):
 			audioAnim.play("ToCat")
 		else:

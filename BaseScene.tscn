@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=84 format=2]
 
 [ext_resource path="res://MaterialsAndShaders/BaseMat.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Base.dae" type="PackedScene" id=2]
@@ -39,7 +39,6 @@
 [ext_resource path="res://Assets/103.jpg" type="Texture" id=37]
 [ext_resource path="res://Assets/101.jpg" type="Texture" id=38]
 [ext_resource path="res://Scripts/pyfiles/NetworkNode.py" type="Script" id=39]
-[ext_resource path="res://PredictLabel.gd" type="Script" id=40]
 
 [sub_resource type="SpatialMaterial" id=10]
 albedo_texture = ExtResource( 6 )
@@ -465,8 +464,5 @@ width = 1.60405
 height = 2.3231
 depth = 1.68797
 material = SubResource( 32 )
-
-[node name="PredictLabel" type="Node" parent="."]
-script = ExtResource( 40 )
 
 [editable path="Base"]
