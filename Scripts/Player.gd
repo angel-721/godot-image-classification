@@ -13,12 +13,14 @@ var actualVelocity := Vector3.ZERO
 var texture := ViewportTexture.new()
 var model = null
 var screenshot = null
+var predictLabel = null
 
 var numScreenshots : int = 0
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	texture = viewport.get_texture()
 	model = get_node("NetworkNode")
+	predictLabel = get_node("../PredictLabel")
 	print(model)
 	
 
@@ -49,7 +51,6 @@ func _unhandled_input(event):
 func _take_picture():
 	ScreenshotHandler._setScreenshot(texture.get_data())
 	ScreenshotHandler.saveScreenshotOne("res://SavedPics/")
-	model.predict_image_read()
-	print(model.prediction)
+	predictLabel.display_cat_text(model.predict_image_read())
 	
 	
