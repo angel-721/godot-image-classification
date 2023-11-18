@@ -1,13 +1,11 @@
 from godot import exposed, export
 from godot import *
-import matplotlib.pyplot as plt
 import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from PIL import Image
-from torch.nn.functional import softmax
 from torch.utils.data import DataLoader, random_split
 from torchvision import datasets, transforms
 
@@ -18,10 +16,6 @@ BATCH_SIZE = 16
 PATH = './Scripts/pyfiles/best.pth'
 
 
-DATA_DIR = './Scripts/pyfiles/data'
-BATCH_SIZE = 16
-PATH = '../models/model1.pth'
-
 # MAKE SURE CLASSES ARE IN THE SAME ORDER THEY ARE IN ../data/
 # Put the classes that are in the ../data folder
 CLASSES = ('Cat', 'Dog')
@@ -29,29 +23,6 @@ CLASSES = ('Cat', 'Dog')
 DEVICE = 'cpu'
 
 
-def im_show(img, label, i, right):
-	"""
-	Show a Image batch with matplotlib
-	"""
-	img = img / 2 + 0.5
-	npimg = img.cpu().numpy()
-	plt.imshow(np.transpose(npimg, (1, 2, 0)))
-
-	plt.title(CLASSES[label])
-	plt.axis('off')
-	if right is True:
-		plt.savefig(f'./results/test-correct{i}.png')
-	else:
-		plt.savefig(f'./results/test-failed{i}.png')
-
-
-def try_gpu(input_n, device):
-	"""
-	Try to use the GPU to train, test, and score on if called
-	"""
-	if input_n != 0:
-		device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-	#print(device)
 
 
 def load_data(data=DATA_DIR):
