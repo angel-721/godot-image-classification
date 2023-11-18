@@ -11,11 +11,16 @@ onready var viewport = $Viewport
 var actualVelocity := Vector3.ZERO
 
 var texture := ViewportTexture.new()
+var model = null
+var DIR = OS.get_executable_path().get_base_dir()
+var interpreter_path = DIR.plus_file("addons/pythonscript/windows-6/python.exe")
+var script_path = DIR.plus_file("Scripts/pyfiles/Model.py")
 
 var numScreenshots : int = 0
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	texture = viewport.get_texture()
+	
 
 func _physics_process(_delta):
 	var dir = Input.get_vector("Walk_Left","Walk_Right","Walk_Forward","Walk_Back")
@@ -45,3 +50,5 @@ func _take_picture():
 	ScreenshotHandler._setScreenshot(texture.get_data())
 # warning-ignore:return_value_discarded
 	ScreenshotHandler.saveScreenshot("res://SavedPics/")
+	
+	

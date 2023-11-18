@@ -3,7 +3,7 @@
 [ext_resource path="res://MaterialsAndShaders/BaseMat.tres" type="Material" id=1]
 [ext_resource path="res://Assets/Base.dae" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/predict.py" type="Script" id=4]
+[ext_resource path="res://Scripts/pyfiles/NetworkNode.py" type="Script" id=4]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -53,7 +53,7 @@ shape = SubResource( 7 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.94852, 0, -14.5438 )
 
-[node name="Predict" type="Node" parent="Player"]
+[node name="NetworkNode" type="Node" parent="Player"]
 script = ExtResource( 4 )
 
 [node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="."]

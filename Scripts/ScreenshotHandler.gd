@@ -4,6 +4,9 @@ extends Node
 var currScreenshot : Image
 var imgName = "Screenshot"
 
+func _ready():
+	pass
+
 func _setScreenshot(newScreenShot : Image):
 	currScreenshot = newScreenShot
 
