@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Groovy booty.ogg-3c92d19168dad9cf08698f8a0415d0a2.oggstr"
+
+[deps]
+
+source_file="res://Assets/Groovy booty.ogg"
+dest_files=[ "res://.import/Groovy booty.ogg-3c92d19168dad9cf08698f8a0415d0a2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
