@@ -5,34 +5,31 @@ export(float) var speed
 export(float) var mouseSpeed
 export(float) var grav
 
-onready var cam = $Camera
-onready var viewport = $Viewport
-onready var audioAnim = $AudioHoldder/AnimationPlayer
-onready var label = $Control/CatDogLabel
+onready var cam := $Camera
+onready var viewport := $Viewport
+onready var audioAnim := $AudioHoldder/AnimationPlayer
+onready var label := $Control/CatDogLabel
 
 var actualVelocity := Vector3.ZERO
 
 var texture := ViewportTexture.new()
-var modelLastPrediction = ''
+var modelLastPrediction := ''
 var model = null
 var screenshot = null
-
-#var predictLabel = null
-
 var numScreenshots : int = 0
+
 func _ready():
 	audioAnim.play("ToCat")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	texture = viewport.get_texture()
 	model = get_node("NetworkNode")
-#	predictLabel = get_node("../PredictLabel")
-	print(model)
+
 	
 
 func _physics_process(_delta):
-	var dir = Input.get_vector("Walk_Left","Walk_Right","Walk_Forward","Walk_Back")
+	var dir := Input.get_vector("Walk_Left","Walk_Right","Walk_Forward","Walk_Back")
 	
-	var vel = Vector3(dir.x * speed, 0,dir.y * speed)
+	var vel := Vector3(dir.x * speed, 0,dir.y * speed)
 	
 	
 	vel = vel.rotated(Vector3(0,1,0),rotation.y)
@@ -65,4 +62,3 @@ func _take_picture():
 			audioAnim.play("ToCat")
 		else:
 			audioAnim.play("ToDog")
-	
