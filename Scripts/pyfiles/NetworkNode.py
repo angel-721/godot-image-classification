@@ -51,7 +51,7 @@ def try_gpu(input_n, device):
 	"""
 	if input_n != 0:
 		device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-	print(device)
+	#print(device)
 
 
 def load_data(data=DATA_DIR):
@@ -139,12 +139,10 @@ class CNN(nn.Module):
 
 		return new_x
 			
-	def predict(self, input_image_path, network_path=PATH):
+	def predict_image_path_net(self, input_image_path, network_path=PATH):
 		"""
 		Predicts a single image
 		"""
-		print("Type: ", type(self))
-		print(nn)
 		model = torch.load(network_path)
 		self.load_state_dict(model)
 		self.eval()
@@ -160,8 +158,38 @@ class CNN(nn.Module):
 		)
 		transformed_image = data_transform(image).unsqueeze(0)
 
-		print('transformed_image shape', transformed_image.shape)
-		print('weight shape', self.fc_layers[0].weight.shape)
+		#print('transformed_image shape', transformed_image.shape)
+		#sprint('weight shape', self.fc_layers[0].weight.shape)
+
+		with torch.no_grad():
+			output = self(transformed_image)
+			_, predicted = torch.max(output.data, 1)
+			predicted_class = CLASSES[predicted.item()]
+
+		#print(predicted_class)
+		return predicted_class
+	
+	def predict_image_object_net(self, image_object, network_path=PATH):
+		"""
+		Predicts a single image
+		"""
+		model = torch.load(network_path)
+		self.load_state_dict(model)
+		self.eval()
+		self.to(DEVICE)
+
+		image = image_object.convert('RGB')
+		data_transform = transforms.Compose(
+			[
+				transforms.Resize((53, 53)),
+				transforms.ToTensor(),
+				transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+			]
+		)
+		transformed_image = data_transform(image).unsqueeze(0)
+
+		#print('transformed_image shape', transformed_image.shape)
+		#sprint('weight shape', self.fc_layers[0].weight.shape)
 
 		with torch.no_grad():
 			output = self(transformed_image)
@@ -169,7 +197,41 @@ class CNN(nn.Module):
 			predicted_class = CLASSES[predicted.item()]
 
 		print(predicted_class)
+		return
+	
+	def predict_image_array_net(self, image_array, network_path=Path,):
+		"""
+		Predicts a single image array
+		"""
+		model = torch.load(network_path)
+		self.load_state_dict(model)
+		self.eval()
+		self.to(DEVICE)
 
+		#image = Image.open(input_image_path).convert('RGB')
+		image = image_array
+		data_transform = transforms.Compose(
+			[
+				transforms.Resize((53, 53)),
+				transforms.ToTensor(),
+				transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
+			]
+		)
+		transformed_image = data_transform(image).unsqueeze(0)
+
+		#print('transformed_image shape', transformed_image.shape)
+		#sprint('weight shape', self.fc_layers[0].weight.shape)
+
+		with torch.no_grad():
+			output = self(transformed_image)
+			_, predicted = torch.max(output.data, 1)
+			predicted_class = CLASSES[predicted.item()]
+
+		print(predicted_class)
+		return
+	
+	def hi_net(self):
+		print("hi from network class")
 	
 
 @exposed
@@ -178,8 +240,17 @@ class NetworkNode(Node):
 	# member variables here, example:
 	a = export(int)
 	b = export(str, default='foo')
+	prediction = export(str, default="")
 
 	def _ready(self):
 		self.model = CNN("./Scripts/pyfiles/data/")
-		print("Test")
-		self.model.predict("./SavedPics/Screenshot1.png", "./Scripts/pyfiles/best.pth")
+
+	
+	def predict_image_array(self, image):
+		self.model.predict_image_array_net(image, "./Scripts/pyfiles/best.pth")
+	
+	def predict_image_object(self, image):
+		self.model.predict_image_object_net(image, ".Scripts/pyfiles/best.pth")
+	
+	def predict_image_read(self):
+		self.prediction = str(self.model.predict_image_path_net("./SavedPics/read.png", "./Scripts/pyfiles/best.pth"))
