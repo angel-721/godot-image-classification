@@ -1,7 +1,7 @@
 extends Control
 
 
-var level = preload("res://BaseScene.tscn")
+var level = preload("res://Nodes/BaseScene.tscn")
 
 
 
