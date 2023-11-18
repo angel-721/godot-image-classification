@@ -46,7 +46,7 @@ func saveScreenshot(path : String) -> int:
 
 func saveScreenshotOne(path : String) -> int:
 	var dir = Directory.new()
-	var imgCount : int
+	var imgCount : int = 0
 	if(not dir.dir_exists(path)):
 		var err = dir.make_dir(path)
 		if(err != 0):

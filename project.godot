@@ -30,7 +30,7 @@ version_control_plugin_name="GitAPI"
 [gdnative]
 
 singletons=[ "res://pythonscript.gdnlib" ]
-singletons_disabled=[ "res://pythonscript.gdnlib" ]
+singletons_disabled=[  ]
 
 [gui]
 
