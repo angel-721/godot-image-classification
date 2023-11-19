@@ -7,7 +7,7 @@ Find the full project [Here!](https://gitlab.com/angel-721/godot-code-camp) This
 Built off a [Pytorch](https://pytorch.org/) implementation of a convolutional neural network found [HERE](https://github.com/angel-721/image-classifier-cnn).
 Trainned on the Kaggle [Cats-vs-Dogs](https://www.kaggle.com/datasets/shaunthesheep/microsoft-catsvsdogs-dataset) dataset.
 
-<a href="https://github.com/angel-721/image-classifier-cnn"><img height="30%" src="https://github.com/angel-721/godot-image-classifcation/assets/75283919/d521c9e8-8bbe-4109-a8e6-0352bf35b20b"></a>
+<a href="https://github.com/angel-721/image-classifier-cnn"><img height="30%" src="https://github.com/angel-721/godot-image-classification/assets/75283919/15de0932-1638-43a6-951c-90c224263061"></a>
 
 ### Loading the model into Godot
 - Prertrain using the linked CNN and place it within Godot project
@@ -22,5 +22,5 @@ The screenshot is then set to the model and the model will classify if the conte
 The model wasn't trainned to handle extra pixels due to background such as the red brick wall which may cause faulty results.
 This is more of demostration of using image classifcation within in a game instead of a game. 
 
-<a href=""><img height="300px" src="https://github.com/angel-721/godot-image-classifcation/assets/75283919/a7525839-2d42-42d7-976c-9e8605d84756"></a>
-<a href=""><img height="300px" src="https://github.com/angel-721/godot-image-classifcation/assets/75283919/84287cf3-e9de-4698-b5a0-6b6a0e28a757"></a> 
+<a href=""><img height="250px" src="https://github.com/angel-721/godot-image-classification/assets/75283919/fb6a9e6d-54fe-4bd3-a1fd-e95d86cb0717"></a>
+<a href=""><img height="250px" src="https://github.com/angel-721/godot-image-classification/assets/75283919/ff536ae7-b133-4960-beee-e24391d5e1f6"></a> 
