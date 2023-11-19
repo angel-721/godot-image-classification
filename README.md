@@ -1,4 +1,4 @@
-# godot-code-camp
+# godot-image-classification
 
 ### This is a simple Godot project to show that image classification can be used within the [godot](https://godotengine.org/) game engine!
 Find the full project [Here!](https://gitlab.com/angel-721/godot-code-camp) This link has Git-LFS support to get the full project.
