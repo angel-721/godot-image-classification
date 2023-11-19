@@ -13,7 +13,7 @@ Trained on the Kaggle [Cats-vs-Dogs](https://www.kaggle.com/datasets/shauntheshe
 - Prertrain using the linked CNN and place it within Godot project
 - Use the Godot 3.5 extension called [PythonScript](https://godotengine.org/asset-library/asset/179)
   - Github for the extension is [godot-python](https://github.com/touilleMan/godot-python?tab=readme-ov-file)
-- Use [```Scripts/pyfiles/NetworkNode.py```](https://github.com/angel-721/godot-image-classifcation/blob/main/Scripts/pyfiles/NetworkNode.py) to load the pretrained model file within the engine
+- Use [```Scripts/pyfiles/NetworkNode.py```](https://github.com/angel-721/godot-image-classification/blob/main/Scripts/pyfiles/NetworkNode.py) to load the pretrained model file within the engine
 - WARNING - the project won't work without this extension and a little extra [set up](https://github.com/angel-721/godot-image-classification/blob/main/Docs/setup.md)
 
 ### Godot Game Environment
