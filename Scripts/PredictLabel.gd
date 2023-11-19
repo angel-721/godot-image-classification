@@ -1,4 +1,4 @@
-xtends Node
+extends Node
 
 
 var model = null
