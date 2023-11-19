@@ -14,7 +14,7 @@ Trainned on the Kaggle [Cats-vs-Dogs](https://www.kaggle.com/datasets/shaunthesh
 - Use the Godot 3.5 extension called [PythonScript](https://godotengine.org/asset-library/asset/179)
   - Github for the extension is [godot-python](https://github.com/touilleMan/godot-python?tab=readme-ov-file)
 - Use [```Scripts/pyfiles/NetworkNode.py```](https://github.com/angel-721/godot-image-classifcation/blob/main/Scripts/pyfiles/NetworkNode.py) to load the pretrained model file within the engine
-- WARNING - the project won't work without this extension and a little extra set up
+- WARNING - the project won't work without this extension and a little extra [set up](https://github.com/angel-721/godot-image-classification/blob/main/Docs/setup.md)
 
 ### Godot Game Environment
 The game enviroment is a simple maze enviroment where the player can walk around in a first person view and right click to take a screenhot.
