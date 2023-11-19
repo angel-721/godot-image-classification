@@ -5,7 +5,7 @@ Find the full project [Here!](https://gitlab.com/angel-721/godot-code-camp) This
 
 ### Classification Model
 Built off a [Pytorch](https://pytorch.org/) implementation of a convolutional neural network found [HERE](https://github.com/angel-721/image-classifier-cnn).
-Trainned on the Kaggle [Cats-vs-Dogs](https://www.kaggle.com/datasets/shaunthesheep/microsoft-catsvsdogs-dataset) dataset.
+Trained on the Kaggle [Cats-vs-Dogs](https://www.kaggle.com/datasets/shaunthesheep/microsoft-catsvsdogs-dataset) dataset.
 
 <a href="https://github.com/angel-721/image-classifier-cnn"><img height="30%" src="https://github.com/angel-721/godot-image-classification/assets/75283919/15de0932-1638-43a6-951c-90c224263061"></a>
 
