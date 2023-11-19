@@ -19,3 +19,7 @@ SavedPics/
 
 #python ugh
 addons/pythonscript/
+
+#Pycaches that shouldn't have been pushed
+Scripts/__pycache__/
+Scripts/__pycache__/
