@@ -17,10 +17,10 @@ Trainned on the Kaggle [Cats-vs-Dogs](https://www.kaggle.com/datasets/shaunthesh
 - WARNING - the project won't work without this extension and a little extra [set up](https://github.com/angel-721/godot-image-classification/blob/main/Docs/setup.md)
 
 ### Godot Game Environment
-The game enviroment is a simple maze enviroment where the player can walk around in a first person view and right click to take a screenhot.
-The screenshot is then set to the model and the model will classify if the contents within in the image are a cat or dog. 
-The model wasn't trainned to handle extra pixels due to background such as the red brick wall which may cause faulty results.
-This is more of demostration of using image classifcation within in a game instead of a game. 
+The game environment is a simple maze environment where the player can walk around in a first person view and right click to take a screenshot.
+The screenshot is then set to the model and the model will classify if the contents within the image are a cat or dog.
+The model wasn't trained to handle extra pixels due to backgrounds such as the red brick wall which may cause faulty results.
+This is more of a demonstration of using image classification within a game instead of a game.
 
 <a href=""><img height="250px" src="https://github.com/angel-721/godot-image-classification/assets/75283919/fb6a9e6d-54fe-4bd3-a1fd-e95d86cb0717"></a>
 <a href=""><img height="250px" src="https://github.com/angel-721/godot-image-classification/assets/75283919/ff536ae7-b133-4960-beee-e24391d5e1f6"></a> 
